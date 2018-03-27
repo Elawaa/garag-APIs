@@ -176,7 +176,20 @@ def accept_user_position():
 
 
 
-
+@app.route('/users/remove',methods=['DELETE'])
+@jwt_required()
+def remove():
+    request_data = request.get_json()
+    connection = sqlite3.connect('data.db')
+    cursor = connection.cursor()
+    delete = "DELETE FROM users WHERE carplate=?"
+    cursor.execute(delete,(str(request_data[0]),))                    #if plate only numbers-----> [plate number]
+    #cursor.execute(delete,('A256',))                                 #if plate numbers and str ----->["plate number"]
+    result = cursor.execute("SELECT * FROM users")
+    row = result.fetchall()
+    connection.commit()
+    connection.close()
+    return jsonify({'users':row})
 
 
 
