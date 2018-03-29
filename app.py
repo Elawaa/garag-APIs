@@ -197,8 +197,9 @@ def remove():
 
 
 if __name__ == '__main__':                                        #If condition to run the app only from the main .
-    app.run(port=5000, debug=True)
-
+    #app.run(port=5000, debug=True)
+    app.debug = True
+    app.run()
 
 
 
