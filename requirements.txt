@@ -1,6 +1,6 @@
 Flask
 Flask-RESTful
 Flask-JWT
-Flask-SQLLite3
+Flask-SQLite
 uwsgi
 psycopg2
