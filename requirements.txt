@@ -1,6 +1,6 @@
 Flask
 Flask-RESTful
 Flask-JWT
-SQLite version 3.3.6
+Flask-SQLAlchemy
 uwsgi
 psycopg2
