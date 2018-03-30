@@ -12,7 +12,6 @@ import datetime
 
 
 app = Flask(__name__)
-app.config['DEBUG'] = True
 app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL', 'sqlite:///data.db')
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['JWT_EXPIRATION_DELTA'] = datetime.timedelta(days=10)
@@ -200,18 +199,9 @@ def remove():
 
 
 
-"""if __name__ == '__main__':                                        #If condition to run the app only from the main .
-    app.run(port=5000, debug=True)"""
-if __name__ == '__main__':
-    from db import db
-    db.init_app(app)
-
-    if app.config['DEBUG']:
-        @app.before_first_request
-        def create_tables():
-            db.create_all()
-
+if __name__ == '__main__':                                        #If condition to run the app only from the main .
     app.run(port=5000, debug=True)
+
 
 
 
