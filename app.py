@@ -199,8 +199,18 @@ def remove():
 
 
 
-if __name__ == '__main__':                                        #If condition to run the app only from the main .
-    app.run(port=5000, debug=True)
+"""if __name__ == '__main__':                                        #If condition to run the app only from the main .
+    app.run(port=5000, debug=True)"""
+if __name__ == '__main__':
+    import data
+    data.init_app(app)
+
+    if app.config['DEBUG']:
+        @app.before_first_request
+        def create_tables():
+            data.create_all()
+
+app.run(port=5000)
 
 
 
