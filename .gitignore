@@ -1,5 +1,8 @@
 .DS_Store
 _pycache_/
 *.pyc
+# Database files
+*.sqlite3
+*.db
 
 
