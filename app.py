@@ -202,8 +202,6 @@ def remove():
 #if __name__ == '__main__':                                        #If condition to run the app only from the main .
 #    app.run(port=5000, debug=True)
 
-
-
 if __name__ == '__main__':
     from db import db
     db.init_app(app)
@@ -214,7 +212,6 @@ if __name__ == '__main__':
             db.create_all()
 
     app.run(port=5000)
-
 
 
 
